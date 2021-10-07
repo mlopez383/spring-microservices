@@ -1,17 +1,16 @@
+server:
+  port: 8071
+
 spring:
   application:
     name: config-server
   profiles:
-    active:
-      - native
+    active: native
   cloud:
     config:
       server:
         native:
-          search-locations: classpath:/config #look in the src/main/resources/config folder.
-
-server:
-  port: 8071
+          search-locations: classpath:/config
 
 #Enable all Spring Boot Actuator endpoints.
 management:
