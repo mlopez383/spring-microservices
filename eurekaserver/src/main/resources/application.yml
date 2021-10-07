@@ -8,6 +8,11 @@ spring:
     import: optional:configserver:http://localhost:8071
 
 eureka:
+  instance:
+    hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false
+    #Change this in order to add a replica of eureka server
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
