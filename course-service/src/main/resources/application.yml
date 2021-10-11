@@ -16,15 +16,16 @@ management:
       exposure:
         include: "*"
 
-#spring.config.import=optional:configserver:http://localhost:8071
-#
-#
-#eureka.instance.preferIpAddress = true
-#eureka.client.registerWithEureka = true
-#eureka.client.fetchRegistry = true
-#eureka.client.serviceUrl.defaultZone = http://localhost:8070/eureka/
-#
-#
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+
 ##########TODO: Move this to a file
 #example.property= I AM DEFAULT
 #spring.datasource.url = jdbc:postgresql://localhost:5432/course_local
