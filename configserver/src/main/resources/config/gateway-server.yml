@@ -1,0 +1,36 @@
+server:
+  port: 8072
+
+spring:
+  cloud:
+    gateway:
+    discovery.locator:
+      enabled: true
+      lowerCaseServiceId: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+#spring:
+#  cloud:
+#    loadbalancer.ribbon.enabled: false
+#    gateway:
+#      routes:
+#        - id: course-service
+#          uri: lb://course-service
+#          predicates:
+#            - Path=/course/**
+#          filters:
+#            - RewritePath=/course/(?<path>.*), /$\{path}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
